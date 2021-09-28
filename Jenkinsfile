@@ -10,10 +10,10 @@ pipeline {
             }
         }
         stage('loop') {
-            steps{
+            steps {
                 echo 'run loop'
                 println "${WORKSPACE}"
-                script{
+                script {
                     sh "ls ${WORKSPACE}/*"
                     ls ${WORKSPACE}/*
                 }
