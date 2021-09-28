@@ -27,6 +27,9 @@ pipeline {
                     println rc
                     url = readFile(file: 'var2.txt')
                     println "$url"
+                    for (int i = 0; i < url.size(); ++i) {
+                        echo "Testing the ${url[i]} element"
+                    }
                     
                 }
             }
