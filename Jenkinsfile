@@ -15,7 +15,7 @@ pipeline {
                 echo 'run loop'
                 println "${WORKSPACE}"
                 script {
-                    sh "sh ${WORKSPACE}/$script"
+                    sh returnstatus:true script: "sh ${WORKSPACE}/$script"
                     ls $wrkspc
                 }
             }
