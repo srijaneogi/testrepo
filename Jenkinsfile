@@ -13,9 +13,10 @@ pipeline {
             steps {
                 echo 'run loop'
                 println "${WORKSPACE}"
+                def wrkspc = ${WORKSPACE}
                 script {
-                    sh "ls ${WORKSPACE}"
-                    ls ${WORKSPACE}
+                    sh "ls $wrkspc"
+                    ls $wrkspc
                 }
             }
         }
