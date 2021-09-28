@@ -13,15 +13,12 @@ pipeline {
             steps {
                 echo 'run loop'
                 println "${WORKSPACE}"
-                sh "ls ${WORKSPACE}/*"
-                sh "chmod +x $script"
-                sh "./$script"
+           
+              
               
                 script{
-                    def url= readfile "var.txt"
-                    echo $url
-                    for (int i = 0; i < url.size(); ++i) {
-                        echo "Testing the ${allmodules[i]} element"
+                    sh "ls ${WORKSPACE}/*"
+                    ls ${WORKSPACE}/*
                     }
                     
                 }
