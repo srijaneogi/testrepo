@@ -24,6 +24,6 @@ pipeline {
     }
 }
 def var(){
-    env.WORKSPACEm= pwd()
+    env.WORKSPACE= pwd()
     def allmodules= readfile "${env.WORKSPACE}/var.txt"
 }
