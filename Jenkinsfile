@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'run loop'
                 sh "chmod +x $script"
-                sh "./ $script"
+                sh "./$script"
                 script{
                     def url= readfile "var.txt"
                     echo $url
