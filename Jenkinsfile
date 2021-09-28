@@ -1,5 +1,8 @@
 pipeline {
-    script = 'scripttofile.sh'
+    environment {
+        script = 'scripttofile.sh'
+    }
+    agent any
     stages {
         stage('Hello') {
             steps {
