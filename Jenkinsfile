@@ -5,6 +5,13 @@ pipeline {
     }
     agent any
     stages {
+        stage(checkout scm) {
+            steps{
+                script{
+                    checkout scm
+                }
+            }
+        }
         stage('Hello') {
             steps {
                 echo 'Hello World - Pipeine'
