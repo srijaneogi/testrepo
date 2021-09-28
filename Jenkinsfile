@@ -21,3 +21,7 @@ pipeline {
         }
     }
 }
+def var(){
+    env.WORKSPACEm= pwd()
+    def allmodules= readfile "${env.WORKSPACE}/var.txt"
+}
