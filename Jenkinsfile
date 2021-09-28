@@ -12,6 +12,7 @@ pipeline {
         stage('loop') {
             steps {
                 echo 'run loop'
+                echo "$PWD"
                 sh "chmod +x $script"
                 sh "./$script"
                 script{
