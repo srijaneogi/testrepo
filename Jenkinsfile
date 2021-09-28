@@ -26,7 +26,7 @@ pipeline {
                     println "$rc"
                     println rc
                     url = readFile(file: 'var2.txt')
-                    println $url
+                    println "$url"
                     
                 }
             }
