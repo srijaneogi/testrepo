@@ -1,6 +1,7 @@
 pipeline {
     environment {
         script = 'scripttofile.sh'
+        wrkspc = ${WORKSPACE}
     }
     agent any
     stages {
@@ -13,7 +14,6 @@ pipeline {
             steps {
                 echo 'run loop'
                 println "${WORKSPACE}"
-                def wrkspc = ${WORKSPACE}
                 script {
                     sh "ls $wrkspc"
                     ls $wrkspc
