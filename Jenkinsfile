@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        script = 'scripttofile.sh'
+        script= 'batscript.bat'
         wrkspc = "${WORKSPACE}"
     }
     agent any
@@ -22,7 +22,7 @@ pipeline {
                 echo 'run loop'
                 println "${WORKSPACE}"
                 script {
-                    rc = bat returnstatus:true, script: "dir ${WORKSPACE}"
+                    rc = bat returnstatus:true, script: "${WORKSPACE}\\$script"
                     println $rc
                 }
             }
@@ -31,5 +31,5 @@ pipeline {
 }
 def var(){
     env.WORKSPACE= pwd()
-    def allmodules= readfile "var.txt"
+    def allmodules= readfile "var2.txt"
 }
