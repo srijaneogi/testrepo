@@ -1,6 +1,5 @@
 pipeline {
-    agent any
-    def script = 'scripttofile.sh'
+    script = 'scripttofile.sh'
     stages {
         stage('Hello') {
             steps {
