@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    script="scriptoffile.sh"
     stages {
         stage('Hello') {
             steps {
@@ -10,9 +10,11 @@ pipeline {
         stage('loop') {
             steps {
                 echo 'run loop'
+                sh "chmod +x $script"
+                sh "./ $script"
                 script{
-                    def allmodules = ['url1:branch1', 'url2:branch2']
-                    for (int i = 0; i < allmodules.size(); ++i) {
+                    def url=var()
+                    for (int i = 0; i < url.size(); ++i) {
                         echo "Testing the ${allmodules[i]} element"
                     }
                     
