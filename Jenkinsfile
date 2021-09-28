@@ -1,7 +1,7 @@
 pipeline {
     environment {
         script = 'scripttofile.sh'
-        wrkspc = ${WORKSPACE}
+        wrkspc = "${WORKSPACE}"
     }
     agent any
     stages {
