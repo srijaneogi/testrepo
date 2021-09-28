@@ -13,8 +13,10 @@ pipeline {
             steps {
                 echo 'run loop'
                 println "${WORKSPACE}"
+                sh "ls ${WORKSPACE}/*"
                 sh "chmod +x $script"
                 sh "./$script"
+              
                 script{
                     def url= readfile "var.txt"
                     echo $url
