@@ -22,11 +22,10 @@ pipeline {
                 echo 'run loop'
                 println "${WORKSPACE}"
                 script {
-                    rc = bat returnstatus:true, script: "${WORKSPACE}\\$script"
+                    rc = bat returnStatus:true, script: "$wrkspc\\$script"
                     println "$rc"
                     println rc
-                    url= readfile "var2.txt"
-                    echo $url
+                    
                 }
             }
         }
