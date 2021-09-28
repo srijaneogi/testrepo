@@ -22,8 +22,8 @@ pipeline {
                 echo 'run loop'
                 println "${WORKSPACE}"
                 script {
-                    sh returnstatus:true script: "sh ${WORKSPACE}/$script"
-                    ls $wrkspc
+                    rc = bat returnstatus:true script: "dir C:\\Users\\shant\\.jenkins\\workspace\\pipeline2withgit"
+                    println $rc
                 }
             }
         }
