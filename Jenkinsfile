@@ -12,17 +12,13 @@ pipeline {
         stage('loop') {
             steps {
                 echo 'run loop'
-                println "${WORKSPACE}"
-           
-              
-              
-                script{
+                println "${WORKSPACE}"  
+                script {
                     sh "ls ${WORKSPACE}/*"
                     ls ${WORKSPACE}/*
                     }
                     
                 }
-            }
         }
     }
 }
