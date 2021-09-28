@@ -13,7 +13,8 @@ pipeline {
                 sh "chmod +x $script"
                 sh "./ $script"
                 script{
-                    def url=var()
+                    def url= readfile "var.txt"
+                    echo $url
                     for (int i = 0; i < url.size(); ++i) {
                         echo "Testing the ${allmodules[i]} element"
                     }
@@ -25,5 +26,5 @@ pipeline {
 }
 def var(){
     env.WORKSPACE= pwd()
-    def allmodules= readfile "${env.WORKSPACE}/var.txt"
+    def allmodules= readfile "var.txt"
 }
