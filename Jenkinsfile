@@ -24,6 +24,7 @@ pipeline {
                 script {
                     rc = bat returnstatus:true, script: "${WORKSPACE}\\$script"
                     println "$rc"
+                    println rc
                 }
             }
         }
