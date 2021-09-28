@@ -25,8 +25,8 @@ pipeline {
                     rc = bat returnStatus:true, script: "$wrkspc\\$script"
                     println "$rc"
                     println rc
-                    url = readFile(file: 'var2.txt')
-                    echo $url
+                    url = readFile(file: "$wrkspc\\var2.txt")
+                    println $url
                     
                 }
             }
