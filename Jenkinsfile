@@ -22,7 +22,7 @@ pipeline {
                 echo 'run loop'
                 println "${WORKSPACE}"
                 script {
-                    rc = bat returnstatus:true script: "dir C:\\Users\\shant\\.jenkins\\workspace\\pipeline2withgit"
+                    rc = bat returnstatus:true, script: "dir C:\\Users\\shant\\.jenkins\\workspace\\pipeline2withgit"
                     println $rc
                 }
             }
