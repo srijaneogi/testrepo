@@ -25,11 +25,12 @@ pipeline {
                     rc = bat returnStatus:true, script: "$wrkspc\\$script"
                     println "$rc"
                     println rc
-                    url = readFile(file: 'var2.txt')
-                    println "$url"
-                    url.each(){
-                        println url
+                    file = readFile(file: 'var2.txt')
+                    lines = file.readLines()
+                    lines.each { String line ->
+                        println line
                     }
+           
              
                     for (int i = 0; i < url.size(); ++i) {
                         echo "Testing the ${url[i]} element"
