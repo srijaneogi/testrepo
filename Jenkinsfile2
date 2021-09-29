@@ -29,6 +29,8 @@ pipeline {
                     lines = file.readLines()
                     lines.each { String line ->
                         println line
+                        (url, branch) = line.tokenize('|')
+                        println "url: ${url}, branch: ${branch}"
                     }
                     
                 }
