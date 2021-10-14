@@ -8,15 +8,13 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     environment: production
-
-
     steps:
     # User Validation check
     - name: 'User Validation'
       env:
-      ActionAllowedUsers: ${{ secrets.ACTION_ALLOWED_USERS }}
-      actionUser: ${{ github.actor }}
-      run: |
+       ActionAllowedUsers: ${{ secrets.ACTION_ALLOWED_USERS }}
+       actionUser: ${{ github.actor }}
+       run: |
         echo "${{ github.actor }}"
         i=0
         if [[ -n "$actionUser" ]] && [[ -n "$ActionAllowedUsers" ]];
