@@ -8,4 +8,4 @@ else
 fi	
 
 sh temp.sh path/test.txt
-a
+abcd
