@@ -1,11 +1,12 @@
 node {  
     stage('Build') { 
-        sh 'echo make' 
+        println 00000 
+        echo "make"
     }
     stage('Test') { 
-        sh 'echo maketest'
+        echo "maketest"
     }
     stage('Deploy') { 
-        sh 'echo makedeploy'
+        echo "makedeploy"
     }
 }
