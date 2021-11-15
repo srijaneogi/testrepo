@@ -1,0 +1,11 @@
+node {  
+    stage('Build') { 
+        sh 'make' 
+    }
+    stage('Test') { 
+        sh 'maketest'
+    }
+    stage('Deploy') { 
+        sh 'makedeploy'
+    }
+}
