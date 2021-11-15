@@ -1,6 +1,6 @@
 node {  
     stage('Build') { 
-        println 00000 
+        println 000 
         echo "make"
     }
     stage('Test') { 
