@@ -7,4 +7,3 @@ else
 	echo "File not found"
 fi	
 sh temp.sh path/test.txt
-llllllllllllllll
