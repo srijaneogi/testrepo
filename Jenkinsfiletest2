@@ -1,0 +1,30 @@
+node {
+    // def a = "abc-xyz"
+    def a = "${params.test}"
+    def c = "tre   "
+    stage('Preparation') { // for display purposes
+      
+    }
+    stage('Build') {
+        def (W,X) = a.split('-')
+        echo "$W"
+        echo "$X"
+    }
+    stage('Results') {
+        echo "$a"
+        if (c.contains("tree")) {
+            echo "yesss"
+        }
+        else {
+            error 'going to fail'
+        }
+        for(int i in 1..4) {
+            if(i == 2) {
+                break  
+            }
+            else {
+                echo "$i"    
+            }
+        }
+    }
+}
