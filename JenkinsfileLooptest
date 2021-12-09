@@ -10,8 +10,9 @@ node {
     def bucket ="n"
     def branch = "${BRANCH_NAME}"
     def scriptfile = "script/loopscript.sh"
+    
     stage('checkout') {
-     checkout scm
+     checkout scm : [$class: 'GitSCM', branches: [[name: "$branch"]]]
     }
     stage('Build') {
         for (i in regionarray) {
