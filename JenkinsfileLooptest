@@ -33,7 +33,7 @@ node {
     }
     stage('Results') {
      //sh "chmod +x $scriptfile"
-     ///sh "./$scriptfile $regionarray"
+     //sh "./$scriptfile $regionarray"
      
      sh '''#!/bin/bash
      for i in $(echo $regionarray)
