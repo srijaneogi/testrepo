@@ -32,6 +32,7 @@ node {
         
     }
     stage('Results') { 
+     echo "$scriptfile $regionarray"
      sh "chmod +x $scriptfile"
      sh "./$scriptfile $regionarray"                                                    
     }
