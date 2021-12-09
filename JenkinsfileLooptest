@@ -9,7 +9,7 @@ node {
     def env = "${params.environment}"
     def bucket ="n"
     //def branch = "$env.BRANCH_NAME"
-    def scriptfile = "script/loopscript.sh"
+    def scriptfile = "script\loopscript.sh"
     
     stage('checkout') {
      checkout scm
@@ -35,6 +35,6 @@ node {
      echo "$scriptfile $regionarray"
      sh "ls"
      sh "chmod +x $scriptfile"
-     sh "./$scriptfile $regionarray"                                                    
+     sh "$scriptfile $regionarray"                                                    
     }
 }
