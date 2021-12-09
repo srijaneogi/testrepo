@@ -8,7 +8,7 @@ node {
     def regionarray = regions.split(" ")
     def env = "${params.environment}"
     def bucket ="n"
-    
+    def script = "script/loopscript.sh"
     stage('Build') {
         for (i in regionarray) {
             if ("$i" == "us-east-1" && "$env" == "prod") {
