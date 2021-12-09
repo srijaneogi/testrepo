@@ -1,7 +1,7 @@
 node {
      properties([
         parameters([
-            string(name: 'environment', defaultValue: '', description: 'Please provide requested input')
+            choice(name: 'environment', choices: ['prod', 'dev'], description: 'Please provide requested input')
             ])
         ])
     def regions = "us-east-1 us-west-1"
@@ -35,12 +35,12 @@ node {
      //sh "chmod +x $scriptfile"
      ///sh "./$scriptfile $regionarray"
      
-                 sh '''#!/bin/bash
-                    for i in $(echo $regionarray)
-                    do
-                         echo "$i"
-                    done
-                 '''                                                       
+     sh '''#!/bin/bash
+     for i in $(echo $regionarray)
+     do
+          echo "$i"
+     done
+     '''                                                       
 
     }
 }
