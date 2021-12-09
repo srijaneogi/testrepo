@@ -33,7 +33,7 @@ node {
     }
     stage('Results') {     
      sh '''#!/bin/bash
-     for i in $(echo $regionarray)
+     for i in $(echo ${regionarray})
      do
           echo "$i"
      done
