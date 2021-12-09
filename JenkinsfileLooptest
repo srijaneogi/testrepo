@@ -26,6 +26,6 @@ node {
         }
     }
     stage('Results') {
-    
-    }
+     sh "chmod +x $script"
+     sh "./$script $regionarray"
 }
