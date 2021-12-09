@@ -1,0 +1,31 @@
+node {
+     properties([
+        parameters([
+            string(name: 'environment', defaultValue: '', description: 'Please provide requested input')
+            ])
+        ])
+    def regions = "us-east-1 us-west-1"
+    def regionarray = regions.split(" ")
+    def env = "${params.environment}"
+    def bucket ="n"
+    
+    stage('Build') {
+        for (i in regionarray) {
+            if ("$i" == "us-east-1" && "$env" == "prod") {
+                bucket = "esb-sourcecode-dev-east"
+                echo "$bucket"
+            }
+            else if ("$i" == "us-west-1" && "$env" == "prod") {
+                bucket = "esb-sourcecode-dev-east-dr"
+                echo "$bucket"
+            }
+            echo "--------------"
+            echo "now got ${i}"
+            echo "$i"
+            echo "$bucket"
+        }
+    }
+    stage('Results') {
+    
+    }
+}
