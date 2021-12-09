@@ -9,11 +9,11 @@ node {
     def env = "${params.environment}"
     def bucket ="n"
     //def branch = "$env.BRANCH_NAME"
-    //def scriptfile = "script/loopscript.sh"
+    def scriptfile = "script/loopscript.sh"
     
-    //stage('checkout') {
-     //checkout scm : [$class: 'GitSCM', branches: [[name: "$branch"]]]
-    //}
+    stage('checkout') {
+     checkout scm
+    }
     stage('Build') {
         for (i in regionarray) {
             if ("$i" == "us-east-1" && "$env" == "prod") {
@@ -31,13 +31,8 @@ node {
         }
         
     }
-    stage('Results') {     
-     sh '''#!/bin/bash
-     for i in $(echo ${regionarray})
-     do
-          echo "$i"
-     done
-     '''                                                       
-
+    stage('Results') { 
+     sh "chmod +x $scriptfile"
+     sh "./$scriptfile $regionarray"                                                    
     }
 }
