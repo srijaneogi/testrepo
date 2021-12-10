@@ -1,7 +1,7 @@
 node {
      properties([
         parameters([
-            separator(name: "TEST_ENVIRONMENT", sectionHeader: "Test Environment", font-size: 22px),
+            separator(name: "TEST_ENVIRONMENT", sectionHeader: "Test Environment", sectionHeaderStyle: "font-size: 22px"),
             choice(name: 'environment', choices: ['prod', 'dev'], description: 'Please provide requested input')
             ])
         ])
