@@ -1,1 +1,15 @@
-
+[
+        {
+                "LambdaNonProd": "JenkinsTest/JenkinsPipelineTest1.zip",
+                "LambdaProd": "Jenkins-Pipeline-Testing-old:Jenkins-Test/JenkinsPipelineTest.zip"
+        },
+        {
+                "LambdaNonProd": "JenkinsTest/JenkinsPipelineTest2.zip",
+                "LambdaProd": "Jenkins-Pipeline-Testing:Jenkins-Test/JenkinsPipelineTest2.zip",
+                "URL": "https://github.wm.com/esb/Jenkins-Pipeline-Testing.git | qa"
+        },
+        {
+                "LambdaNonProd": "JenkinsTest/JenkinsPipelineTest3.zip",
+                "LambdaProd": "Jenkins-Pipeline-Testing-new:Jenkins-Test/JenkinsPipelineTest3.zip"
+        }
+]
