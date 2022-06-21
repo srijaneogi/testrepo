@@ -1,0 +1,20 @@
+pipeline {
+
+agent { label ' Linux01'}
+
+stages {
+
+  stage('Hello') {
+
+     steps {
+
+        sh """curl \
+        -X POST \
+        -H "Accept: application/vnd.github.v3+json" \ 
+        -H "Authorization: token <TOKEN>" \
+        https://api.github.com/repos/OWNER/REPO/hooks \
+        -d '{"name":"web","active":true,"events":["push","pull_request"],"config":{"url":"https://example.com/webhook","content_type":"json","insecure_ssl":"0"}}'"""
+     }
+  }
+}
+}
